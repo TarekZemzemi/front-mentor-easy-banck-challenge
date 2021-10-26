@@ -1,0 +1,56 @@
+.feature {
+  background-color: $lightGrayishBlue;
+  text-align: center;
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+  &__intro {
+    @include breakpoint-up(large) {
+      width: 60%;
+      margin-bottom: 3.75rem;
+    }
+  }
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap; // used to tell the items to back to the next line if there is no spaces
+    }
+  }
+
+  &__item {
+    padding: 0.9375rem;
+    @include breakpoint-up(medium) {
+      //tablette styles
+      // here we want to tell each item to take half of the row
+      flex: 0 0 50%;
+      //1 : flex grow this means that the items is allowed to grow
+      //0 : flex shrink
+      //50% flex basis the default width that the item have
+    }
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+  &__icon {
+    margin-bottom: 1.875rem;
+    @include breakpoint-up(large) {
+      margin-bottom: 2.75rem;
+    }
+  }
+  &__title {
+    font-size: 1.25rem;
+    line-height: 1.15; //define the space between lines
+    font-weight: 300; //define how bold the text is
+    color: $darkBlue;
+    margin-bottom: 1rem;
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
